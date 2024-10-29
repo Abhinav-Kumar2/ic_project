@@ -5,6 +5,7 @@
 #include<time.h>
 #include<ctype.h>
 
+printf("Each guess must be a valid five-letter word.\nThe color of a tile will change to show you how close your guess was.\nIf the tile turns green, the letter is in the word, and it is in the correct spot.\nIf the tile turns yellow, the letter is in the word, but it is not in the correct spot.\nIf the tile turns gray, the letter is not in the word.");
 
 void green() {
 	printf("\033[0;32m");
