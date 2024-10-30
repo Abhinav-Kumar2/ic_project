@@ -55,11 +55,11 @@ int main() {
 	int index = num % 18;
 	strcpy(given, words[index].word);
 	while (strcmp(entered, given) && lives != 0) {
-		printf("\n");
+		printf("\nEnter a word:");
 		scanf("%s", entered);
 		while (strlen(entered)!=5) {
-			printf("\nInvalid length.\n");
-			scanf("Enter a word: %s", entered);
+			printf("\nInvalid length.\nEnter a word:");
+			scanf("%s", entered);
 		}
 		int newr = rand();
 		int newrr = newr % 5;	
