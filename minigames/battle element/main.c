@@ -1,7 +1,6 @@
 #include"character.h"
 
 int main(){
-    srand(time(NULL));
     char ename[10];
     fgets(ename,10,stdin);
     ename[strcspn(ename, "\n")] = 0;
