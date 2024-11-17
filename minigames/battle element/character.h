@@ -1,3 +1,5 @@
+#define NO_OF_WEAPS 6
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -11,14 +13,16 @@ typedef struct {
 
 typedef struct {
     char mname[10];
-    int mhp;
-    int chp;
+    int mhp; //maxhp
+    int chp; //currenthp
     int sanity;
     int shieldon;
     Weapon mweap;
-    int isowned[6];
+    int isowned[NO_OF_WEAPS];
 } Character;
 
+
+//below are the weapons that exist in the game, to be updated
 Weapon Fist = {.mname="Fist",.boost=1};
 Weapon Hammer = {.mname="Hammer",.boost=2};
 Weapon Knife = {.mname="Knife",.boost=3};
@@ -27,7 +31,7 @@ Weapon Katana = {.mname="Katana",.boost=5};
 Weapon SMG = {.mname="SMG",.boost=9};
 
 void initialize(Character* c){
-    c->mhp=300;
+    c->mhp=300; //modifications can be made to vary the maximum hp from character to character
     c->sanity=1;
     c->shieldon=0;
     c->mweap=Fist;
@@ -37,19 +41,15 @@ void initialize(Character* c){
 
 void equip(Character* charac){
     int choice=0;
-    Weapon weaps[6]={Fist,Hammer,Knife,Pistol,Katana,SMG};
+    Weapon weaps[NO_OF_WEAPS]={Fist,Hammer,Knife,Pistol,Katana,SMG};
     while(1){
-        for(int i=0;i<4;i++){
+        for(int i=0;i<NO_OF_WEAPS;i++){
             if(charac->isowned[i] ==1) printf("Enter %d to use %s\n",i,weaps[i].mname);
         }
         scanf("%d",&choice);
-        if((choice==1 || choice==2 || choice ==3 || choice==0)&&charac->isowned[choice]==1){break;}
+        if((choice>=0 && choice<NO_OF_WEAPS)&&charac->isowned[choice]==1){break;}
         if(charac->isowned[choice]!=1) {printf("You do not own this weapon\n");}
     }
-    if(choice==3){
-        printf("Huh, I did not expect you to discover this... You have gained access to the secret gun.\n");
-    }
-
     charac->mweap=weaps[choice];
     printf("Equipped %s\n",weaps[choice].mname);
 }
