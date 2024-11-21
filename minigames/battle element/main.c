@@ -2,6 +2,7 @@
 
 int main(){
     char ename[10];
+    printf("enter your name: ");
     fgets(ename,10,stdin);
     ename[strcspn(ename, "\n")] = 0;
     Character Me;
