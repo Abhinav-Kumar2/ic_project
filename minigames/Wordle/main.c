@@ -46,8 +46,14 @@ void check(char* entered, char* given) {
 }
 
 int main() {
-	printf("Each guess must be a valid five-letter word.\nThe color of a tile will change to show you how close your guess was.\nIf the tile turns green, the letter is in the word, and it is in the correct spot.\nIf the tile turns yellow, the letter is in the word, but it is not in the correct spot.\nIf the tile turns gray, the letter is not in the word.");
-	wordgen();
+	printf("\"Welcome to this place of mine! I like to call it the detective's prison! I had to work quite hard to catch you.\"\n");
+	printf("I am sure you must be wondering quite a bit on why I brought you here. You'll get your reasons in some time for sure!\n");
+	printf("\nTill then, we can start off things with your favorite passtime! Wordle!!!\n");
+	printf("\nHere are the rules for the game - You have to guess a five letter word that would be a key to progress further ahead!\n");
+	printf("You will type the word you want to guess on the screen in front of you. You will have five chances to guess. \n");
+	printf("If one of your guessed letter exists in the word but at a different position, then your letter will turn yellow.\n");
+	printf("Whereas if your letter is in the word and at the position you guessed, it will highlight green! Good Luck!\n");
+	printf("\nGuess here:");
 	float sanity = 1;
 	char entered[6];
 	char given[6];
@@ -57,27 +63,25 @@ int main() {
 	int index = num % 18;
 	strcpy(given, words[index].word);
 	while (strcmp(entered, given) && lives != 0) {
-		printf("\nEnter a word:");
+		printf("\n");
 		scanf("%s", entered);
 		while (strlen(entered)!=5) {
-			printf("\nInvalid length.\nEnter a word:");
-			scanf("%s", entered);
+			printf("\nInvalid length.\n");
+			scanf("Enter a word: %s", entered);
 		}
 		int newr = rand();
 		int newrr = newr % 5;	
 		float x = (float)newr / (float)(RAND_MAX / 1);
 		if (x > sanity && strcmp(entered,given)!=0) { entered[newrr] = trp[newrr]; }
 		printf("\033[F\033[K");
-		//printf("\ngiven:%s entered:%s\n",given,entered);
 		check(entered, given);
 		if(strcmp(entered,given))lives--;
 	}
 	if (lives == 0) {
-		printf("\nAs expected, you couldn't guess a simple damn word... The word was %s. It means %s", given,words[index].meaning);
+		printf("\nYou spend your mornings awayon these game and you couldn't even guess a simple word?!! The word %s. It means %s", given,words[index].meaning);
 	}
 	else {
-		printf("\nHuh, don't get too haughty. You just guessed one word. Let me enlighten you with its meaning. It means %s", words[index].meaning);
+		printf("\nAs expected, the great detective guessed the correct word! Let me enlighten you with its meaning. It means %s", words[index].meaning);
 	}
     return 0;
 }
-
