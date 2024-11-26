@@ -1,0 +1,2 @@
+
+        char str[MAX];
