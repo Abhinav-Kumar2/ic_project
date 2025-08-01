@@ -2,7 +2,6 @@
 
 **The Weight Of Love** is a narrative-driven C/C++ text adventure game that blends detective investigation, puzzles, and minigames. You play as a world-famous detective, driven to solve the murder of your beloved wife. The game tests your deduction, reasoning, and reflexes through a series of interactive rooms, each with unique challenges and story elements.
 
----
 
 ## Features
 
@@ -25,8 +24,6 @@
 - **Branching Narrative:**  
   Your choices and performance in minigames affect the story's outcome, leading to different epilogues.
 
----
-
 ## Folder Structure
 
 ```
@@ -45,8 +42,6 @@ final/
     b24cm1018_b24cm1002_b24cm1053_b24cs1056_EpilogueLose.txt # Losing epilogue
     ...
 ```
-
----
 
 ## How to Build & Run
 
@@ -69,25 +64,34 @@ final/
 
    The main executable will call other minigame executables as you progress.
 
----
 
 ## Gameplay Overview
 
-- **Start:**  
-  Enter your character's name and begin the investigation.
-- **Investigation:**  
-  Collect all clues and testimonies to unlock the next phase.
-- **Rooms:**  
-  Solve puzzles and win minigames to advance through rooms.
-- **Finale:**  
-  Face the mastermind in a final battle. Your choices and victories determine the ending.
+- **Start:** Enter your character's name and begin the investigation.
+- **Investigation:** Collect all clues and testimonies to unlock the next phase.
+- **Rooms:** Solve puzzles and win minigames to advance through rooms.
+- **Finale:** Face the mastermind in a final battle. Your choices and victories determine the ending.
 
----
+## Some Game Snapshots
+
+![alt text](<Screenshot 2025-08-01 160905.png>)
+
+![alt text](<Screenshot 2025-08-01 160927.png>)
+
+![alt text](<Screenshot 2025-08-01 160947.png>)
+
+![alt text](<Screenshot 2025-08-01 161029.png>)
+
+![alt text](<Screenshot 2025-08-01 161051.png>)
+
+![alt text](<Screenshot 2025-08-01 161108.png>)
 
 ## Credits
 
 Developed by NotEpicGames.
+
 Scriptwriter - Abhinav Kumar
+
 Programmer - Abhinav Kumar, Yug Dalwadi Bharat, Pranav Nair, Sadat Ul Rouf Wani.
 
 ## Notes
